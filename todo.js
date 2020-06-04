@@ -1,14 +1,18 @@
 const container = document.querySelector('.container');
-	var inputValue = document.querySelector('.input');
-	const add = document.querySelector('.add');
+var inputValue = document.querySelector('.input');
+const add = document.querySelector('.add');
+
 
 	if(window.localStorage.getItem("todos") == undefined){
 		var todos = [];
-		windows.localStorage.setItem("todos", JSON.stringify(todos));
+		window.localStorage.setItem("todos", JSON.stringify(todos));
 	}
 
 	var todosEX = window.localStorage.getItem("todos");
 	var todos =JSON.parse(todosEX);
+	console.log(todos)
+	console.log(todosEX)
+
 
 	class item{
 		constructor(name){
@@ -27,41 +31,45 @@ const container = document.querySelector('.container');
 			var edit = document.createElement('button');
 			edit.classList.add('edit');
 			edit.innerHTML = "EDIT";
-			edit.addEventListener('click' , () => this.edit(input, name) );
+			edit.addEventListener('click' , () => this.edit(input, name));
 
-			var delete = document.createElement('button');
-			delete.classList.add('delete');
-			delete.innerHTML = "DELETE";
-			delete.addEventListener('click' , () => this.remove(itemBox, name));
+			var deleteItem = document.createElement('button');
+			deleteItem.classList.add('delete');
+			deleteItem.innerHTML = "DELETE";
+			deleteItem.addEventListener('click' , () => this.delete(itemBox, name));
 
 
 			container.appendChild(itemBox);
-
-
 			itemBox.appendChild(input);
 			itemBox.appendChild(edit);
-			itemBox.appendChild(delete);
+			itemBox.appendChild(deleteItem)
 
 
 		}
 		edit(input, name){
 			if(input.disabled == true){
-				input.disabled =!input.disabled;
+				input.disabled = !input.disabled;
 			}
 			else{
 				input.disabled = !input.disabled;
 				let indexof = todos.indexOf(name);
 				todos[indexof] = input.value;
 				window.localStorage.setItem("todos", JSON.stringify(todos));
+				alert('successfully edited');
+
 			}
 		}
 		delete(itemBox, name){
-			itemBox.parentNode.deleteChild(itemBox);
+			itemBox.parentNode.removeChild(itemBox);
 			let index = todos.indexOf(name);
+			console.log(index);
 			todos.splice(index, 1);
 			window.localStorage.setItem("todos", JSON.stringify(todos));
+			alert('successfully deleted');
+
 		}
 	}
+
 	add.addEventListener('click', check);
 	window.addEventListener('keydown' , (e) => {
 		if (e.which == 13) {
@@ -72,7 +80,8 @@ const container = document.querySelector('.container');
 		if(inputValue.value != ""){
 			new item(inputValue.value);
 			todos.push(inputValue.value);
-			windows.localStorage.setItem("todos", JSON.stringify(todos));
+			window.localStorage.setItem("todos", JSON.stringify(todos));
+			alert('new item added');
 			inputValue.value = "";
 		}
 	}
@@ -80,4 +89,4 @@ const container = document.querySelector('.container');
 		new item(todos[v]);
 	
 	}
-	new item("sport");
+	// new item("sport");

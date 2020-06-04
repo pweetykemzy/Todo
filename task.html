@@ -1,120 +1,128 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<link rel ="styesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<link rel="styesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 	<script src="https://kit.fontawesome.com/2b2fc977e1.js" crossorigin="anonymous"></script>
- 
+
 	<title>TODO List</title>
 	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
 
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
+		body {
+			height: 100%;
+			background-color: purple;
+			box-sizing: border-box;
 
-body{
-	height: 100%;
-	background-color: purple;
-	box-sizing: border-box;
+		}
 
-}
-h1{
-	font-size: 3rem;
-	font-weight: 50;
-	margin: 1rem 0 3rem;
-	text-align: center;
-	color:  white;
-	font-family: sans-serif;
-	
-}
-.title{
-	color:white;
-	text-transform: uppercase;
-	font-weight: 800;
-}
+		h1 {
+			font-size: 3rem;
+			font-weight: 50;
+			margin: 1rem 0 3rem;
+			text-align: center;
+			color: white;
+			font-family: sans-serif;
 
-.inputDiv{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
+		}
 
-}
-.input{
-	padding: 0.5rem 1rem;
-	height: 50px;
-	outline: none;
-	border:none;
-	background-color: white;
-	width: 350px;
-	transition: .5s;
-	margin:0.25rem;
-	border-radius: 25px;
-	font-size: 1.15rem;
+		.title {
+			color: white;
+			text-transform: uppercase;
+			font-weight: 800;
+		}
 
-}
-.add{
-	height: 50px;
-	width : 50px;
-	border-radius: 25px;
-	outline: none;
-	border:none;
-	transition: .5s;
-	background-color: white;
-	color:purple;
-	margin: 0.25rem;
-	background-color: white;
-	cursor:pointer;
-}
-
-.add:hover{
-		opacity: 0.7;
-}
-.container{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	margin-top: 2rem;
-}
-.item{
-	padding: 0.5rem;
-	margin-bottom: 1.5rem;
-	border-bottom: 4px solid #fff;
-
-}
-.item_input{
-	background :none;
-	outline: none;
-	color: #fff;
-	border:none;
-	width: 245px;
-	font-size: 1.4rem;
-}
-
-.edit{
-	font-size: 1.4rem;
-	margin: 0 0.5rem;
-	font-family: sans-serif;
-	background :none;
-	outline: none;
-	color:white;
-	border:none;
-	cursor:pointer;
-}
-.delete{
-	font-size: 1.4rem;
-	font-family: sans-serif;
-	background :none;
-	outline: none;
-	color:white;
-	border:none;
-	cursor: pointer;
-}
+		.inputDiv {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
 
+		}
+
+		.input {
+			padding: 0.5rem 1rem;
+			height: 50px;
+			outline: none;
+			border: none;
+			background-color: white;
+			width: 350px;
+			transition: .5s;
+			margin: 0.25rem;
+			border-radius: 25px;
+			font-size: 1.15rem;
+
+		}
+
+		.add {
+			height: 50px;
+			width: 50px;
+			border-radius: 25px;
+			outline: none;
+			border: none;
+			transition: .5s;
+			background-color: white;
+			color: purple;
+			margin: 0.25rem;
+			background-color: white;
+			cursor: pointer;
+		}
+
+		.add:hover {
+			opacity: 0.7;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			margin-top: 2rem;
+		}
+
+		.item {
+			padding: 0.5rem;
+			margin-bottom: 1.5rem;
+			border-bottom: 4px solid #fff;
+
+		}
+
+		.item_input {
+			background: none;
+			outline: none;
+			color: #fff;
+			border: none;
+			width: 245px;
+			font-size: 1.4rem;
+		}
+
+		.edit {
+			font-size: 1.4rem;
+			margin: 0 0.5rem;
+			font-family: sans-serif;
+			background: none;
+			outline: none;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
+
+		.delete {
+			font-size: 1.4rem;
+			font-family: sans-serif;
+			background: none;
+			outline: none;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
 	</style>
 
 
@@ -123,17 +131,19 @@ h1{
 
 
 
-	
-	
+
+
 </head>
+
 <body>
 	<h1><span class="title"> My TODO</span>List</h1>
 	<div class="inputDiv">
-		<input  type="text" class="input" placeholder="Type what you want to do...">
+		<input type="text" class="input" placeholder="Type what you want to do...">
 		<button class="add"><i class="fas fa-plus"></i></button>
-</div>
+	</div>
 	<div class="container">
-		</div>
-<script src='todo.js'></script>
+	</div>
+	<script src='todo.js'></script>
 </body>
+
 </html>
